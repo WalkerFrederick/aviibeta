@@ -9,11 +9,15 @@ import {
 import Home from './pages/Home'
 import Subscribe from './pages/Subscribe'
 import Account from './pages/Account'
+import { useIdentityContext, IdentityContextProvider } from "react-netlify-identity-widget"
 
 import Navbar from './components/navbar'
 import './styles/shared.scss'
 function App() {
+  const url = "https://aviibox.netlify.com" // supply the url of your Netlify site instance with Identity enabled. VERY IMPORTANT
+
   return (
+    <IdentityContextProvider url={url}>
     <Router>
       <div className="App">
         <Navbar title={appLogo()}>
@@ -46,6 +50,7 @@ function App() {
       </div>
 
     </Router>
+    </IdentityContextProvider>
   );
 }
 
