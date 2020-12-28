@@ -1,25 +1,54 @@
 import logo from './logo.svg';
-import './App.css';
-
+import './styles/shared.scss'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Home from './pages/Home'
+import Navbar from './components/navbar'
+import './styles/shared.scss'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar title={appLogo()}>
+        </Navbar>
+        <div style={{paddingTop: 50}}/>
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/join"></Route>
+          <Route path="/how-it-works"></Route>
+          <Route path="/past-boxes"></Route>
+          <Route path="/news"></Route>
+          <Route path="/become-an-influencer"></Route>
+          <Route path="/">
+            <Home></Home>
+          </Route>
+        </Switch>
+        <footer>
+            {appLogo()}
+            <div className="footer-links">
+              <Link to="/">Home</Link>
+              <Link to="/past-boxes">Past Boxes</Link>
+              <Link to="/join">Subscribe</Link>
+            </div>
+      </footer>
+      </div>
+
+    </Router>
   );
+}
+
+function appLogo() {
+  return (
+    <span style={{display: 'block', fontSize: '28px', fontWeight: 'bold'}}>
+      <span style={{display: 'inline-block', color: "#FCA5A5", fontSize: 'inherit'}}>avii</span>
+      <span style={{display: 'inline-block'}}>box</span>
+    </span>
+  )
 }
 
 export default App;

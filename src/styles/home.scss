@@ -1,0 +1,108 @@
+@import 'colors';
+@import 'constants';
+.Home {
+    .home-savings {
+        display: flex;
+        flex-direction: column-reverse;
+        .home-savings-left , .home-savings-right{
+            width: 100%;
+            min-height: 100px; 
+        }
+        .home-savings-right {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: $background;
+            div {
+                padding: 0 15px;
+            }
+          
+        }
+        .home-savings-left {
+            background-color: $brand-primary;
+            color: white;
+            h1 {
+                font-size: 3rem;
+                width: 2%;
+                padding-left: 15px;
+            }
+        }
+        @media (min-width: $desktop) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            .home-savings-left , .home-savings-right{
+                width: 50%;
+            }
+            .home-savings-right {
+                flex-direction: column;
+            }
+        }
+    }
+    .home-pricing {
+        min-height: 200px;
+        background-color: $brand-primary-light;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        .home-pricing-half {
+            width: 100%;
+        }
+        h1 {
+            margin-left: 0;
+            margin-top: 0;
+            color: white;
+        }
+        p {
+            margin-left: 0;
+            color: white;
+        }
+        button {
+            margin-left: 0;
+            margin-bottom: 15px;
+        }
+        @media (min-width: $desktop) {
+            min-height: 200px;
+            background-color: $brand-primary-light;
+            padding: 15px;
+            display: flex;
+            flex-direction: row-reverse;
+        .home-pricing-half {
+            width: 50%;
+            h1, p {
+                margin-left: 15px;
+            }
+            button {
+                margin-left: 15px;
+            }
+        }
+        }
+    }
+    .home-points {
+        display: flex;
+        flex-direction: column;
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+            color: $brand-primary;
+            
+        }
+        @media (min-width: $desktop) {
+          flex-direction: row;
+          h1 {
+            font-size: 1rem;
+            width: 33%;
+          }
+        }
+    }
+    .home-how-it-works {
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: $brand-primary;
+        padding: 0 15px;
+        text-align: center;
+    }
+}
