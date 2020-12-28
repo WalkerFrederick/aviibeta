@@ -7,6 +7,8 @@ import {
   Link
 } from "react-router-dom";
 import Home from './pages/Home'
+import Subscribe from './pages/Subscribe'
+
 import Navbar from './components/navbar'
 import './styles/shared.scss'
 function App() {
@@ -19,7 +21,7 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/join"></Route>
+          <Route path="/join"><Subscribe></Subscribe></Route>
           <Route path="/how-it-works"></Route>
           <Route path="/past-boxes"></Route>
           <Route path="/news"></Route>
