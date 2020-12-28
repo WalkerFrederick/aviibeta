@@ -6,7 +6,7 @@ import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css';
 
   function PricingWindow(props) {
-    const [plan, setPlan] = useState(3);
+    const [plan, setPlan] = useState(4);
     let plans = [{name: '1 Month', price: '25', timePhrase: ''}, {name: '2 Months', price: '23', timePhrase: '2 Months' }, {name: '3 Months', price: '20', timePhrase: '3 Months'},{name: '4 Month', price: '18', timePhrase: '4 months'}]
     return (
       <div className="pricing-window">
