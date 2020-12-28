@@ -28,11 +28,15 @@ nav {
     .nav-content {
         z-index: 100;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         height: 50px;
+        a {
+            text-align: center;
+            color: $brand-primary;
+        }
         @media (min-width: $desktop) {
-            justify-content: start;
+            justify-content: space-between;
         }
     }
 

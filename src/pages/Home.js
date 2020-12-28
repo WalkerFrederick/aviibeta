@@ -17,7 +17,7 @@ function Home() {
         <div style={{height: '400px', width: '100%'}}>
             <BackgroundImage>
               <div style={{height: '100%', width: '100%', display: 'flex', alignItems: 'flex-end'}}>
-                <button>Subscribe</button><button style={{marginLeft: 0,backgroundColor:'white', color:  '#FCA5A5'}}>Starting at $18/month</button>
+                <Link to ='/join'><button>Subscribe</button><button style={{marginLeft: 0,backgroundColor:'white', color:  '#FCA5A5'}}>Starting at $18/month</button></Link>
               </div>
             </BackgroundImage>
         </div>
@@ -42,7 +42,7 @@ function Home() {
           <div className="home-pricing-half">
             <h1>Pricing For Everyone.</h1>
             <p>Save when you subscribe to a multi-month plan, or try us out for a month and cancel if you aren't happy.</p>
-            <button style={{backgroundColor: 'white', color: '#FCA5A5'}}>Subscribe Now</button>
+            <Link to='/join'><button style={{backgroundColor: 'white', color: '#FCA5A5'}}>Subscribe Now</button></Link>
           </div>
           <div className="home-pricing-half">
             <PricingWindow/>

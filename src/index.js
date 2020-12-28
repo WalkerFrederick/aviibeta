@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { useIdentityContext, IdentityContextProvider } from "./react-netlify-identity-widget"
+
+const url = "https://aviibox.netlify.app" // supply the url of your Netlify site instance with Identity enabled. VERY IMPORTANT
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+        <IdentityContextProvider url={url}>
+        <App />
+    </IdentityContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -6,10 +6,10 @@ import {
 import '../styles/home.scss'
 import BackgroundImage from '../components/backgroundImage'
 import {loadStripe} from '@stripe/stripe-js';
-import { useIdentityContext, IdentityContextProvider } from "react-netlify-identity-widget"
+import { useIdentityContext, IdentityContextProvider } from "../react-netlify-identity-widget"
 import "react-netlify-identity-widget/styles.css"
 // code split the modal til you need it!
-const IdentityModal = React.lazy(() => import("react-netlify-identity-widget"))
+const IdentityModal = React.lazy(() => import("../react-netlify-identity-widget"))
 
 
 function Account() {
@@ -20,6 +20,9 @@ function Account() {
   if (isLoggedIn) {
     console.log(identity)
   }
+   else if(isLoggedIn === false && dialog !== true) {
+     setDialog(true)
+   }
   
   let goToAccountPage = () => {
     fetch("https://aviibox.azurewebsites.net/customer-portal", {
@@ -32,12 +35,11 @@ function Account() {
 
   return (
     <div className="Account">
-        <button className="btn" onClick={() => setDialog(true)}>
-        {isLoggedIn ? "LOG OUT" : "LOG IN"}
-      </button>
+        
       <React.Suspense fallback="loading...">
         <IdentityModal showDialog={dialog} onCloseDialog={() => setDialog(false)} />
       </React.Suspense>
+      <div className="space"></div>
     </div>
   );
 }
