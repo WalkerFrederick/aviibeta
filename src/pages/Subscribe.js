@@ -15,7 +15,7 @@ function Subscribe() {
         .redirectToCheckout({
           lineItems: [
             // Replace with the ID of your price
-            {price: 'price_1I39wxDy3Xvv28ZGxG1VlsO3', quantity: 1},
+            {price: 'price_1I3SBSDy3Xvv28ZGsVfEG59r', quantity: 1},
           ],
           mode: 'subscription',
           successUrl: 'https://aviibox.netlify.com',
@@ -25,6 +25,7 @@ function Subscribe() {
           }
         })
         .then(function(result) {
+            console.log(result)
           // If `redirectToCheckout` fails due to a browser or network
           // error, display the localized error message to your customer
           // using `result.error.message`.

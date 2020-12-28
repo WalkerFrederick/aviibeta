@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home'
 import Subscribe from './pages/Subscribe'
+import Account from './pages/Account'
 
 import Navbar from './components/navbar'
 import './styles/shared.scss'
@@ -25,6 +26,8 @@ function App() {
           <Route path="/how-it-works"></Route>
           <Route path="/past-boxes"></Route>
           <Route path="/news"></Route>
+          <Route path="/account"><Account/></Route>
+
           <Route path="/become-an-influencer"></Route>
           <Route path="/">
             <Home></Home>
@@ -36,6 +39,8 @@ function App() {
               <Link to="/">Home</Link>
               <Link to="/past-boxes">Past Boxes</Link>
               <Link to="/join">Subscribe</Link>
+              <Link to="/account">Account</Link>
+
             </div>
       </footer>
       </div>
