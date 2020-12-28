@@ -9,7 +9,8 @@ import {loadStripe} from '@stripe/stripe-js';
 
 
 function Subscribe() {
-    (async function () {
+
+    let goToPayment = async () => {
         const stripe = await loadStripe('pk_test_51I39udDy3Xvv28ZGaBjIkoNJDmwmdJ8Hys4sZbSgQNpJbc7MBckZbLIjg79NCq5gymDyerit0fbTr47oQ1ozXRLc00I3nl0C87');
         stripe
         .redirectToCheckout({
@@ -30,6 +31,9 @@ function Subscribe() {
           // error, display the localized error message to your customer
           // using `result.error.message`.
         });
+    }
+    (async function () {
+        goToPayment()
     })();
   return (
     <div className="Subscribe">
