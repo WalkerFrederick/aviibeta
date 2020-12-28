@@ -14,7 +14,7 @@ import { useIdentityContext, IdentityContextProvider } from "react-netlify-ident
 import Navbar from './components/navbar'
 import './styles/shared.scss'
 function App() {
-  const url = "https://aviibox.netlify.com" // supply the url of your Netlify site instance with Identity enabled. VERY IMPORTANT
+  const url = "https://aviibox.netlify.app" // supply the url of your Netlify site instance with Identity enabled. VERY IMPORTANT
 
   return (
     <IdentityContextProvider url={url}>

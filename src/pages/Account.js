@@ -1,5 +1,5 @@
 import '../styles/shared.scss'
-import React from 'react'
+import React, {userState} from 'react'
 import {
   Link
 } from "react-router-dom";
@@ -17,6 +17,10 @@ function Account() {
   const [dialog, setDialog] = React.useState(false)
   const isLoggedIn = identity && identity.isLoggedIn
 
+  if (isLoggedIn) {
+    console.log(identity)
+  }
+  
   let goToAccountPage = () => {
     fetch("https://aviibox.azurewebsites.net/customer-portal", {
       method: 'POST',
@@ -28,7 +32,7 @@ function Account() {
 
   return (
     <div className="Account">
-        <button className="btn" onClick={() => setDialog(isLoggedIn)}>
+        <button className="btn" onClick={() => setDialog(true)}>
         {isLoggedIn ? "LOG OUT" : "LOG IN"}
       </button>
       <React.Suspense fallback="loading...">
