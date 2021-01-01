@@ -3,15 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { useIdentityContext, IdentityContextProvider } from "./react-netlify-identity-widget"
+import firebase from "firebase/app";
+import "firebase/auth";
+import {FirebaseAuthProvider} from '@react-firebase/auth'
 
-const url = "https://aviibox.netlify.app" // supply the url of your Netlify site instance with Identity enabled. VERY IMPORTANT
+var firebaseConfig = {
+  apiKey: "AIzaSyB1g2VpQK_IS1Ac_ng7XwZpEmYYabXSBQI",
+  authDomain: "aviibox-d4bc5.firebaseapp.com",
+  databaseURL: "https://aviibox-d4bc5-default-rtdb.firebaseio.com",
+  projectId: "aviibox-d4bc5",
+  storageBucket: "aviibox-d4bc5.appspot.com",
+  messagingSenderId: "404972634376",
+  appId: "1:404972634376:web:3ce0a95afc681455efacbd",
+  measurementId: "G-YNREG8MBKH"
+};
 
 ReactDOM.render(
   <React.StrictMode>
-        <IdentityContextProvider url={url}>
+    <FirebaseAuthProvider firebase={firebase} {...firebaseConfig}>
         <App />
-    </IdentityContextProvider>
+    </FirebaseAuthProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
