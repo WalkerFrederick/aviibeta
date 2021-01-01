@@ -1,3 +1,16 @@
+@import 'colors';
+
 .Account {
-    
+    .account-loading-container {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        color: $brand-primary;
+        font-size: 1rem;
+        text-align: center;
+    }
 }

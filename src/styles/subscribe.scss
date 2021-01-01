@@ -1,0 +1,36 @@
+@import 'colors';
+.Subscribe {
+    .subscribe-header{
+        min-height: 500px;
+        display: flex;
+        flex-direction: row;
+        .subscribe-header-left{
+            width: 100%;
+            max-width: 500px;
+            .img {
+                height: 500px;
+                width: 100%;
+                max-width: 500px;
+            }
+           
+        }
+        .subscribe-header-right{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: $brand-primary;
+            h1 {
+                padding-left: 30px;
+                color: $brand-primary;
+            }
+            p {
+                padding-left: 30px;
+                color: $brand-primary;
+            }
+            .pricing-window {
+                background: none;
+            }
+        }
+    }
+}

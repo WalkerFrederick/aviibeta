@@ -10,7 +10,8 @@ import { useIdentityContext, IdentityContextProvider } from "../react-netlify-id
 import "react-netlify-identity-widget/styles.css"
 import image2 from '../images/image-2.jpg'
 import firebase from "firebase/app";
-
+import { css } from "@emotion/core";
+import BounceLoader from "react-spinners/BounceLoader";
 // code split the modal til you need it!
 const IdentityModal = React.lazy(() => import("../react-netlify-identity-widget"))
 
@@ -79,14 +80,17 @@ function Account(props) {
     <div className="Account">
 
       {signedInStatus?
+      <div className="account-loading-container">
+            <BounceLoader color={'#FCA5A5'} loading={true} size={60} />
           <h1>Account Found - If you just subscribed please wait 5 minutes. Check your email for a conformation.</h1>
+      </div>
       :
           <div className="signup">
             <div style={{backgroundImage: `url(${image2})`, backgroundPosition: 'center', backgroundSize: 'cover'}} className={"signup-header"}>
               <h1>Create Account</h1>
               <div className="signup-step-counter-container">
-                <div className="signup-step-counter-active">1</div>
-                <div className="signup-step-counter">2</div>
+                <div className="signup-step-counter">1</div>
+                <div className="signup-step-counter-active">2</div>
                 <div className="signup-step-counter">3</div>
               </div>
             </div>

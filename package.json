@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.1.4",
     "@reach/dialog": "^0.12.1",
     "@reach/tabs": "^0.12.1",
     "@reach/visually-hidden": "^0.12.0",
@@ -20,6 +21,7 @@
     "react-netlify-identity-widget": "^0.2.7",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "react-spinners": "^0.10.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

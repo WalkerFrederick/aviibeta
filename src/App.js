@@ -9,6 +9,7 @@ import {
 import Home from './pages/Home'
 import Subscribe from './pages/Subscribe'
 import Account from './pages/Account'
+import Success from './pages/Success'
 
 import Navbar from './components/navbar'
 
@@ -30,12 +31,12 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/join"><Subscribe></Subscribe></Route>
+          <Route path="/join" ><Subscribe signedInStatus={isSignedIn}></Subscribe></Route>
           <Route path="/how-it-works"></Route>
           <Route path="/past-boxes"></Route>
           <Route path="/news"></Route>
           <Route path="/account"><Account signedInStatus={isSignedIn} user={user}/></Route>
-
+          <Route path="/success"><Success/></Route>
           <Route path="/become-an-influencer"></Route>
           <Route path="/">
             <Home></Home>
